@@ -23,6 +23,8 @@ async def trans_to_wallet():
 
     await new_wallet.transfer_ton(destination_adress = end_adress, amount = SUMMA,
                               message = 'hi from @puplip')
+    
+    print(SUMMA,"токенов успешно переведено!")
 
 
 if __name__ == '__main__':
