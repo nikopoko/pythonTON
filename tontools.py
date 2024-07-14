@@ -21,7 +21,6 @@ async def trans_to_wallet():
         print(balance)
         balance = await new_wallet.get_balance()
 
-
     await new_wallet.transfer_ton(destination_adress = end_adress, amount = SUMMA,
                               message = 'hi from @puplip')
 
