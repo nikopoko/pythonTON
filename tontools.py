@@ -3,8 +3,9 @@ import time
 from TonTools import Wallet, LsClient, TonApiClient
 
 
-SUMMA = X #сколько тонов должно прийти
-end_adress = "ВАШ АДРЕС КОШЕЛЬКА" #ВПИШИТЕ СВОЙ КОШЛЁК
+SUMMA = 5 #сколько тонов должно прийти
+end_adress = "kQBWtsaGAc7WQInphnDBaz6D0LqVW09ysY1rNX5RcKnI_ElC" #ВПИШИТЕ СВОЙ КОШЛЁК
+my_mnemoics= ['school', 'over', 'flight', 'ball', 'useful', 'confirm', 'fog', 'hidden', 'luxury', 'oxygen', 'car', 'climb', 'person', 'stuff', 'try', 'chef', 'code', 'anxiety', 'pelican', 'trust', 'quantum', 'oxygen', 'border', 'during']
 
 async def trans_to_wallet():
     provider = TonApiClient('7cf850c4c02323291022269e9377e7a2b0dde558897eda655181748047656d6f')
@@ -18,7 +19,7 @@ async def trans_to_wallet():
     print(balance)
     while(SUMMA > balance):
         time.sleep(5)
-        print(balance)
+        print(balance) #выводится баланс нового кошелька
         balance = await new_wallet.get_balance()
 
     await new_wallet.transfer_ton(destination_adress = end_adress, amount = SUMMA,
