@@ -13,7 +13,7 @@ end_adress = "ВАШ АДРЕС КОШЕЛЬКА" #ВПИШИТЕ СВОЙ КО�
     
 
 async def trans_to_wallet(end_adress, SUMMA):
-    provider = TonApiClient('7cf850c4c02323291022269e9377e7a2b0dde558897eda655181748047656d6f',addresses_form='user_friendly',testnet=True)
+    provider = TonApiClient('AFH7AUTQMY4CKMAAAAAA76X6K36GZN2YICGMSAS2Q5TOIL3WRXCKQ7QCFORMLXAIXUQWICA',addresses_form='user_friendly',testnet=True)
     #client = LsClient(ls_index=2, default_timeout=20)
     #await client.init_tonlib()
 
@@ -21,13 +21,13 @@ async def trans_to_wallet(end_adress, SUMMA):
 
     print(new_wallet.address) #вывод кошелёк
     print(new_wallet.mnemonics)
-    balance = await new_wallet.sale.get_balance()
+    balance = await new_wallet.get_balance()
     print(balance)
-    new_wallet.
+
     while(SUMMA > balance):
         time.sleep(5)
         print(balance) #выводится баланс нового кошелька
-        balance = await new_wallet.sale.get_balance()
+        balance = await new_wallet.get_balance()
 
     print("успешный перевод на новый кошелёк")
 
